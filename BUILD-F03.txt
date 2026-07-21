@@ -1,0 +1,4 @@
+VALE Voice Lab
+Version: 1.0.0 F03
+Build date: 2026-07-21 22:04:54.970588
+Status: Prototype Pitch Detection Phase
