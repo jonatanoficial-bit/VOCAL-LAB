@@ -9,6 +9,8 @@
   <link rel="manifest" href="manifest.webmanifest" />
   <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/capture.css" />
+  <link rel="stylesheet" href="css/analysis.css" />
 </head>
 <body>
   <div class="app-shell">
@@ -16,34 +18,51 @@
       <a class="brand" href="#inicio" aria-label="VALE VOICE LAB, início"><span class="brand-mark">V</span><span>VALE <b>VOICE</b><small>LAB</small></span></a>
       <nav class="navigation" aria-label="Navegação principal">
         <a class="nav-link active" href="#inicio"><span>◈</span> Visão geral</a>
-        <a class="nav-link locked" href="#avaliacao"><span>⌁</span> Nova avaliação <em>F02</em></a>
+        <a class="nav-link active-capture" href="#captura"><span>⌁</span> Laboratório vocal <em>F06</em></a>
         <a class="nav-link locked" href="#historico"><span>◷</span> Histórico <em>F16</em></a>
         <a class="nav-link locked" href="#treinos"><span>◉</span> Treinamentos <em>F17</em></a>
         <a class="nav-link locked" href="#relatorios"><span>▣</span> Relatórios <em>F15</em></a>
       </nav>
-      <div class="sidebar-bottom"><div class="system-status"><i></i><span>Sistema operacional</span></div><p>Build VVL-1.0.0-F01</p></div>
+      <div class="sidebar-bottom"><div class="system-status"><i></i><span>Sistema operacional</span></div><p>Build VVL-1.0.0-F06</p></div>
     </aside>
 
     <main>
       <header class="topbar"><button class="menu-button" id="menuButton" aria-label="Abrir menu">☰</button><div class="breadcrumb">PLATAFORMA <span>/</span> VISÃO GERAL</div><div class="top-actions"><button class="icon-button" aria-label="Notificações">◌</button><button class="profile" aria-label="Abrir perfil"><span>V</span><b>Visitante</b></button></div></header>
       <section class="hero" id="inicio">
-        <div class="hero-copy"><p class="eyebrow">Vocal Intelligence Platform <span>•</span> Fase 01</p><h1>Conheça a sua voz.<br /><em>Eleve seu potencial.</em></h1><p class="hero-text">Um espaço profissional para compreender, acompanhar e desenvolver a sua performance vocal com precisão.</p><div class="hero-actions"><a class="button primary disabled" href="#avaliacao" aria-disabled="true">Iniciar avaliação <span>→</span></a><a class="button secondary" href="#roadmap">Explorar plataforma</a></div></div>
+        <div class="hero-copy"><p class="eyebrow">Vocal Intelligence Platform <span>•</span> Fases 03–06</p><h1>Ouça a sua voz.<br /><em>Entenda sua extensão.</em></h1><p class="hero-text">Uma análise local de frequência, afinação, extensão e região de conforto para orientar os próximos testes vocais.</p><div class="hero-actions"><a class="button primary" href="#analise">Abrir laboratório <span>→</span></a><a class="button secondary" href="#roadmap">Explorar plataforma</a></div></div>
         <div class="voice-orbit" aria-label="Representação visual de ondas vocais"><div class="orbit-ring ring-one"></div><div class="orbit-ring ring-two"></div><div class="orbit-ring ring-three"></div><div class="wave-core"><span>V</span><small>VOICE</small></div><div class="frequency-line f1"></div><div class="frequency-line f2"></div><div class="frequency-line f3"></div></div>
       </section>
       <section class="content-grid" aria-label="Painel principal">
-        <article class="panel welcome-panel"><div><p class="section-tag">PRONTO PARA COMEÇAR</p><h2>Sua jornada vocal<br />começa aqui.</h2><p>A Fase 01 estabeleceu a base visual, técnica e de qualidade da plataforma. O motor de captura de áudio será liberado na próxima etapa.</p></div><div class="phase-chip"><span>01</span><small>FASE ATUAL</small></div></article>
-        <article class="panel build-panel"><div class="panel-heading"><p class="section-tag">INTEGRIDADE DA BUILD</p><span class="live-dot">ONLINE</span></div><h3>VVL-1.0.0-F01</h3><dl><div><dt>Data de compilação</dt><dd id="buildDate">—</dd></div><div><dt>Ambiente</dt><dd>GitHub Pages</dd></div><div><dt>Estado</dt><dd class="good">Auditado · Base estável</dd></div></dl></article>
+        <article class="panel welcome-panel"><div><p class="section-tag">LABORATÓRIO VOCAL</p><h2>Frequência, afinação,<br />extensão e conforto.</h2><p>As análises funcionam localmente, durante a sessão atual. Use a captura limpa da Fase 02 para resultados mais confiáveis.</p></div><div class="phase-chip"><span>06</span><small>FASE ATUAL</small></div></article>
+        <article class="panel build-panel"><div class="panel-heading"><p class="section-tag">INTEGRIDADE DA BUILD</p><span class="live-dot">ONLINE</span></div><h3>VVL-1.0.0-F06</h3><dl><div><dt>Data de compilação</dt><dd id="buildDate">—</dd></div><div><dt>Ambiente</dt><dd>GitHub Pages</dd></div><div><dt>Estado</dt><dd class="good">Vocal Analysis Ready</dd></div></dl></article>
+      </section>
+      <section class="capture-section" id="captura" aria-labelledby="captureTitle">
+        <div class="section-heading"><div><p class="section-tag">ESTAÇÃO DE CAPTURA</p><h2 id="captureTitle">Configure a entrada de áudio</h2></div><p>O acesso ao microfone só é solicitado quando você escolhe iniciar. O processamento ocorre somente neste dispositivo.</p></div>
+        <div class="capture-grid">
+          <article class="panel capture-console"><div class="console-top"><div><span class="console-state" id="captureState">AGUARDANDO</span><h3 id="captureTitleStatus">Microfone desconectado</h3></div><div class="privacy-tag">PROCESSAMENTO LOCAL</div></div><div class="meter-wrap"><div class="meter-labels"><span>-60</span><span>-36</span><span>-18</span><span>-6</span><span>0 dBFS</span></div><div class="audio-meter" aria-label="Nível de entrada de áudio"><span id="meterFill"></span><i id="noiseMarker" aria-hidden="true"></i></div><div class="meter-readout"><strong id="dbReadout">— dBFS</strong><small id="signalHint">Ative o microfone para verificar o sinal.</small></div></div><div class="quality-row"><div><span>Ruído ambiente</span><b id="noiseReadout">Não calibrado</b></div><div><span>Qualidade do sinal</span><b id="qualityReadout">Aguardando</b></div><div><span>Amostragem</span><b id="sampleReadout">—</b></div></div></article>
+          <aside class="panel capture-controls"><p class="section-tag">CONTROLES</p><label for="deviceSelect">Fonte de entrada</label><select id="deviceSelect" disabled><option>Detectando dispositivos…</option></select><p class="control-help">Escolha o microfone que deseja usar. A lista é atualizada após a permissão.</p><div class="control-actions"><button class="button primary" id="startCapture" type="button">Ativar microfone <span>→</span></button><button class="button secondary" id="calibrateNoise" type="button" disabled>Calibrar ambiente</button><button class="text-button" id="stopCapture" type="button" disabled>Encerrar captura</button></div><p class="compatibility" id="compatibilityStatus">Verificando compatibilidade do navegador…</p></aside>
+        </div><div class="capture-note"><span>i</span><p><b>Para resultados consistentes:</b> escolha um local silencioso, mantenha o microfone a cerca de 15–20 cm da boca e evite fones Bluetooth durante avaliações de precisão.</p></div>
+      </section>
+      <section class="analysis-section" id="analise" aria-labelledby="analysisTitle">
+        <div class="section-heading"><div><p class="section-tag">LABORATÓRIO DE ANÁLISE</p><h2 id="analysisTitle">Dados claros, sem promessas vazias.</h2></div><p>Inicie o microfone e calibre o ambiente antes de usar os testes. Os resultados são indicadores musicais, não diagnóstico clínico.</p></div>
+        <div class="analysis-grid">
+          <article class="panel pitch-panel"><div class="analysis-card-head"><div><p class="section-tag">F03 · FREQUÊNCIA FUNDAMENTAL</p><h3>Monitor de pitch</h3></div><span class="confidence" id="pitchConfidence">SEM SINAL</span></div><div class="pitch-main"><strong id="pitchNote">—</strong><div><b id="pitchHz">— Hz</b><small id="pitchOctave">Aguardando voz estável</small></div><div class="cents-display"><span id="centsReadout">—</span><small>cents</small></div></div><div class="tuning-track"><i></i><span id="tuningNeedle"></span><b>−50</b><b>0</b><b>+50</b></div><div class="pitch-footer"><label for="referenceSelect">Referência A4</label><select id="referenceSelect"><option value="440">440 Hz</option><option value="442">442 Hz</option><option value="432">432 Hz</option></select><span id="pitchMessage">Ative a captura para começar.</span></div></article>
+          <article class="panel test-panel"><div class="analysis-card-head"><div><p class="section-tag">F05 · EXTENSÃO VOCAL</p><h3>Mapa de extensão da sessão</h3></div><span class="session-indicator" id="rangeStatus">PRONTO</span></div><div class="range-results"><div><span>Nota mais grave</span><strong id="rangeLow">—</strong><small id="rangeLowHz">—</small></div><div class="range-divider"></div><div><span>Nota mais aguda</span><strong id="rangeHigh">—</strong><small id="rangeHighHz">—</small></div></div><p class="test-copy">Faça sirenes lentas do grave ao agudo. O teste aceita apenas sinais vocais com confiança suficiente.</p><button class="button primary" id="rangeButton" type="button" disabled>Iniciar mapeamento <span>→</span></button></article>
+          <article class="panel test-panel tessitura-panel"><div class="analysis-card-head"><div><p class="section-tag">F06 · TESSITURA ESTIMADA</p><h3>Região de conforto na sessão</h3></div><span class="session-indicator" id="tessituraStatus">PRONTO</span></div><div class="tessitura-result"><strong id="tessituraRange">—</strong><span id="tessituraSamples">Nenhuma amostra estável</span></div><p class="test-copy">Cante frases, escalas ou vocalizes confortáveis por ao menos 20 segundos. O intervalo usa os percentis centrais das amostras estáveis.</p><button class="button secondary" id="tessituraButton" type="button" disabled>Iniciar sessão de conforto</button></article>
+        </div>
+        <div class="analysis-disclaimer"><span>i</span><p><b>Importante:</b> extensão e tessitura variam com técnica, repertório, fadiga e saúde. Esta ferramenta não classifica a voz nem substitui professor de canto ou fonoaudiólogo.</p></div>
       </section>
       <section class="roadmap-section" id="roadmap"><div class="section-heading"><div><p class="section-tag">MAPA DE EVOLUÇÃO</p><h2>Plataforma em construção</h2></div><p>Uma arquitetura feita para crescer sem comprometer precisão, desempenho ou experiência.</p></div><div class="roadmap">
         <article class="roadmap-item complete"><span class="step">01</span><div><p>CONCLUÍDA</p><h3>Fundação da plataforma</h3><small>Arquitetura, visual e PWA base.</small></div><i>✓</i></article>
-        <article class="roadmap-item"><span class="step">02</span><div><p>PRÓXIMA</p><h3>Captura de áudio</h3><small>Permissões, calibração e filtros.</small></div><i>→</i></article>
-        <article class="roadmap-item"><span class="step">03</span><div><p>PLANEJADA</p><h3>Inteligência de frequência</h3><small>Detecção de pitch e confiança.</small></div><i>→</i></article>
-        <article class="roadmap-item"><span class="step">04+</span><div><p>EM EVOLUÇÃO</p><h3>Análise e treinamento</h3><small>Métricas, relatórios e exercícios.</small></div><i>→</i></article>
+        <article class="roadmap-item complete"><span class="step">02</span><div><p>CONCLUÍDA</p><h3>Captura de áudio</h3><small>Permissões, calibração e medidor.</small></div><i>✓</i></article>
+        <article class="roadmap-item complete"><span class="step">03–04</span><div><p>CONCLUÍDA</p><h3>Frequência e afinação</h3><small>Pitch, nota e desvio em cents.</small></div><i>✓</i></article>
+        <article class="roadmap-item complete"><span class="step">05–06</span><div><p>CONCLUÍDA</p><h3>Extensão e tessitura</h3><small>Mapas de sessão e conforto estimado.</small></div><i>✓</i></article>
       </div></section>
-      <footer><span>© 2026 VALE GAMES · VALE VOICE LAB</span><a href="CHANGELOG.md">Changelog</a><span>·</span><a href="docs/AUDITORIA-F01.md">Auditoria F01</a></footer>
+      <footer><span>© 2026 VALE GAMES · VALE VOICE LAB</span><a href="CHANGELOG.md">Changelog</a><span>·</span><a href="docs/AUDITORIA-F06.md">Auditoria F06</a></footer>
     </main>
   </div>
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="js/vocal-analysis.js"></script>
   <script src="js/app.js"></script>
 </body>
 </html>

@@ -1,13 +1,13 @@
 {
   "product": "VALE VOICE LAB",
-  "build": "VVL-1.0.0-F02",
-  "phase": 2,
-  "builtAt": "2026-07-21T17:40:54-03:00",
+  "build": "VVL-1.0.0-F06",
+  "phase": 6,
+  "builtAt": "2026-07-22T10:41:28-03:00",
   "timezone": "America/Sao_Paulo",
   "releaseType": "phase-delivery",
   "distribution": {
-    "localPackage": "VALE-VOICE-LAB-VVL-1.0.0-F02-2026-07-21-1740-BRT.zip",
-    "githubRepository": "https://github.com/jonatanoficial-bit/VOCAL-LAB"
+    "localPackage": "VALE-VOICE-LAB-VVL-1.0.0-F06-2026-07-22-1041-BRT.zip",
+    "githubRepository": "Manual upload requested; no GitHub upload in this build"
   },
   "audioPrivacy": "Local processing only; audio is not recorded, uploaded, or persisted."
 }
