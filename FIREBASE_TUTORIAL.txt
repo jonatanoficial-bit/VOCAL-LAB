@@ -1,0 +1,121 @@
+VALE VOICE LAB — GUIA DE FIREBASE GRATUITO (SPARK)
+===================================================
+
+OBJETIVO
+--------
+O app já funciona sem Firebase: cada perfil e cada resumo de sessão são salvos
+somente neste navegador, por meio de IndexedDB.
+
+O Firebase é opcional. Quando configurado, o app envia somente:
+- nome do perfil;
+- data da sessão;
+- resumos numéricos (sustentação, vibrato, ataque e transições).
+
+O app NÃO envia, grava nem armazena arquivos de áudio.
+
+PASSO 1 — CRIAR O PROJETO GRATUITO
+----------------------------------
+1. Acesse https://console.firebase.google.com/ com sua conta Google.
+2. Clique em “Adicionar projeto”.
+3. Nome sugerido: vale-voice-lab.
+4. Desative Google Analytics se não precisar dele neste momento.
+5. Clique em “Criar projeto”.
+
+O plano Spark gratuito é suficiente para desenvolvimento e primeiros testes.
+Confira os limites atuais no console antes de um lançamento comercial.
+
+PASSO 2 — REGISTRAR O APP WEB
+------------------------------
+1. Dentro do projeto, clique no ícone </> (Web).
+2. Dê um apelido, por exemplo: VALE VOICE LAB Web.
+3. Não é necessário marcar Firebase Hosting; o projeto funciona no GitHub Pages.
+4. Clique em “Registrar app”.
+5. Copie o objeto firebaseConfig mostrado pelo Firebase.
+
+PASSO 3 — INSERIR AS CHAVES NO PROJETO
+---------------------------------------
+1. Abra o arquivo js/firebase-config.js.
+2. Troque enabled: false por enabled: true.
+3. Preencha cada campo com os valores que você copiou:
+
+globalThis.VVL_FIREBASE = {
+  enabled: true,
+  config: {
+    apiKey: 'COLE_AQUI',
+    authDomain: 'SEU-PROJETO.firebaseapp.com',
+    projectId: 'SEU-PROJETO',
+    storageBucket: 'SEU-PROJETO.firebasestorage.app',
+    messagingSenderId: 'COLE_AQUI',
+    appId: 'COLE_AQUI'
+  }
+};
+
+As configurações públicas do Firebase Web não são uma senha. A proteção real
+vem das regras do Firestore abaixo. Nunca publique chaves administrativas,
+arquivos de conta de serviço ou tokens privados no GitHub.
+
+PASSO 4 — ATIVAR AUTENTICAÇÃO ANÔNIMA
+--------------------------------------
+1. No menu Firebase, abra Authentication > Sign-in method.
+2. Clique em “Novo provedor”.
+3. Selecione “Anônimo”.
+4. Ative e salve.
+
+O app usa essa autenticação somente para criar um identificador protegido para
+cada navegador. Mais tarde você pode adicionar login Google/e-mail sem mudar
+o formato dos dados.
+
+PASSO 5 — CRIAR O FIRESTORE
+---------------------------
+1. Abra Firestore Database > Criar banco de dados.
+2. Escolha uma região próxima aos seus usuários.
+3. Comece em modo de produção.
+4. Abra a aba “Regras” e substitua todo o conteúdo por:
+
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /users/{userId} {
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+
+      match /sessions/{sessionId} {
+        allow read, write: if request.auth != null && request.auth.uid == userId;
+      }
+    }
+  }
+}
+
+5. Clique em “Publicar”.
+
+Essas regras impedem que uma pessoa leia ou escreva os resumos de outra.
+NÃO use “allow read, write: if true” em produção.
+
+PASSO 6 — AUTORIZAR O DOMÍNIO DO GITHUB PAGES
+----------------------------------------------
+1. Em Authentication > Settings > Authorized domains, adicione:
+   jonatanoficial-bit.github.io
+2. Em testes locais, localhost normalmente já está autorizado.
+
+PASSO 7 — TESTAR
+----------------
+1. Publique os arquivos no GitHub Pages por HTTPS.
+2. Abra o site e crie/salve um perfil.
+3. Faça um teste e clique em “Salvar sessão”.
+4. Em Firestore Database, verifique a coleção users e a subcoleção sessions.
+
+Se a tela mostrar “Firebase precisa de revisão”, revise:
+- todos os campos do firebase-config.js;
+- autenticação anônima ativada;
+- regras do Firestore publicadas;
+- domínio do GitHub Pages autorizado;
+- publicação por HTTPS, não por arquivo local.
+
+PRIVACIDADE E LANÇAMENTO
+------------------------
+- Solicite consentimento e publique uma política de privacidade antes de
+  comercializar o produto.
+- Não declare diagnóstico médico, classificação vocal definitiva ou precisão
+  clínica sem validação formal.
+- Mantenha as regras acima e revise os limites/custos no painel Firebase.
+- O Firebase Spark pode atender protótipos; para escala comercial, monitore
+  uso e avalie o plano mais adequado.

@@ -7,19 +7,20 @@
   <meta name="description" content="VALE VOICE LAB — plataforma profissional de avaliação e evolução vocal." />
   <title>VALE VOICE LAB — Vocal Intelligence</title>
   <link rel="manifest" href="manifest.webmanifest" />
-  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="assets/brand/vale-voice-lab-mark.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="css/styles.css" />
   <link rel="stylesheet" href="css/capture.css" />
   <link rel="stylesheet" href="css/analysis.css" />
+  <link rel="stylesheet" href="css/advanced-analysis.css" />
 </head>
 <body>
   <div class="app-shell">
     <aside class="sidebar" id="sidebar">
-      <a class="brand" href="#inicio" aria-label="VALE VOICE LAB, início"><span class="brand-mark">V</span><span>VALE <b>VOICE</b><small>LAB</small></span></a>
+      <a class="brand" href="#inicio" aria-label="VALE VOICE LAB, início"><img class="brand-mark" src="assets/brand/vale-voice-lab-mark.svg" alt="" /><span>VALE <b>VOICE</b><small>LAB</small></span></a>
       <nav class="navigation" aria-label="Navegação principal">
         <a class="nav-link active" href="#inicio"><span>◈</span> Visão geral</a>
-        <a class="nav-link active-capture" href="#captura"><span>⌁</span> Laboratório vocal <em>F06</em></a>
-        <a class="nav-link locked" href="#historico"><span>◷</span> Histórico <em>F16</em></a>
+        <a class="nav-link active-capture" href="#captura"><span>⌁</span> Laboratório vocal <em>F10</em></a>
+        <a class="nav-link active-capture" href="#perfil"><span>◷</span> Meu perfil <em>LOCAL</em></a>
         <a class="nav-link locked" href="#treinos"><span>◉</span> Treinamentos <em>F17</em></a>
         <a class="nav-link locked" href="#relatorios"><span>▣</span> Relatórios <em>F15</em></a>
       </nav>
@@ -27,14 +28,27 @@
     </aside>
 
     <main>
-      <header class="topbar"><button class="menu-button" id="menuButton" aria-label="Abrir menu">☰</button><div class="breadcrumb">PLATAFORMA <span>/</span> VISÃO GERAL</div><div class="top-actions"><button class="icon-button" aria-label="Notificações">◌</button><button class="profile" aria-label="Abrir perfil"><span>V</span><b>Visitante</b></button></div></header>
+      <header class="topbar"><button class="menu-button" id="menuButton" aria-label="Abrir menu">☰</button><div class="breadcrumb">PLATAFORMA <span>/</span> VISÃO GERAL</div><div class="top-actions"><button class="icon-button" aria-label="Notificações">◌</button><a class="profile" href="#perfil" aria-label="Abrir perfil"><span id="profileInitial">V</span><b id="profileTopName">Visitante</b></a></div></header>
       <section class="hero" id="inicio">
         <div class="hero-copy"><p class="eyebrow">Vocal Intelligence Platform <span>•</span> Fases 03–06</p><h1>Ouça a sua voz.<br /><em>Entenda sua extensão.</em></h1><p class="hero-text">Uma análise local de frequência, afinação, extensão e região de conforto para orientar os próximos testes vocais.</p><div class="hero-actions"><a class="button primary" href="#analise">Abrir laboratório <span>→</span></a><a class="button secondary" href="#roadmap">Explorar plataforma</a></div></div>
         <div class="voice-orbit" aria-label="Representação visual de ondas vocais"><div class="orbit-ring ring-one"></div><div class="orbit-ring ring-two"></div><div class="orbit-ring ring-three"></div><div class="wave-core"><span>V</span><small>VOICE</small></div><div class="frequency-line f1"></div><div class="frequency-line f2"></div><div class="frequency-line f3"></div></div>
       </section>
       <section class="content-grid" aria-label="Painel principal">
-        <article class="panel welcome-panel"><div><p class="section-tag">LABORATÓRIO VOCAL</p><h2>Frequência, afinação,<br />extensão e conforto.</h2><p>As análises funcionam localmente, durante a sessão atual. Use a captura limpa da Fase 02 para resultados mais confiáveis.</p></div><div class="phase-chip"><span>06</span><small>FASE ATUAL</small></div></article>
-        <article class="panel build-panel"><div class="panel-heading"><p class="section-tag">INTEGRIDADE DA BUILD</p><span class="live-dot">ONLINE</span></div><h3>VVL-1.0.0-F06</h3><dl><div><dt>Data de compilação</dt><dd id="buildDate">—</dd></div><div><dt>Ambiente</dt><dd>GitHub Pages</dd></div><div><dt>Estado</dt><dd class="good">Vocal Analysis Ready</dd></div></dl></article>
+        <article class="panel welcome-panel"><div><p class="section-tag">LABORATÓRIO VOCAL</p><h2>Controle, vibrato,<br />ataque e transições.</h2><p>As fases avançadas observam sinais durante a sessão atual. Use uma entrada limpa e jamais force a voz além do conforto.</p></div><div class="phase-chip"><span>10</span><small>FASE ATUAL</small></div></article>
+        <article class="panel build-panel"><div class="panel-heading"><p class="section-tag">INTEGRIDADE DA BUILD</p><span class="live-dot">ONLINE</span></div><h3>VVL-1.0.0-F10</h3><dl><div><dt>Data de compilação</dt><dd id="buildDate">—</dd></div><div><dt>Ambiente</dt><dd>GitHub Pages</dd></div><div><dt>Estado</dt><dd class="good">Advanced Vocal Lab Ready</dd></div></dl></article>
+      </section>
+      <section class="advanced-section" id="avancado" aria-labelledby="advancedTitle">
+        <div class="section-heading"><div><p class="section-tag">F07–F10 · CONTROLE VOCAL</p><h2 id="advancedTitle">Leitura de comportamento durante o exercício</h2></div><p>Todos os testes usam somente dados temporários. Pare imediatamente se houver dor, desconforto ou fadiga.</p></div>
+        <div class="advanced-grid">
+          <article class="panel advanced-card"><div class="analysis-card-head"><div><p class="section-tag">F07 · SUSTENTAÇÃO E RESPIRAÇÃO</p><h3>Nota sustentada</h3></div><span class="session-indicator" id="sustainStatus">PRONTO</span></div><div class="metric-hero"><strong id="sustainTime">0,0 s</strong><span id="sustainStability">Aguardando teste</span></div><div class="metric-columns"><div><span>Estabilidade de intensidade</span><b id="intensityStability">—</b></div><div><span>Amplitude observada</span><b id="intensitySpread">—</b></div></div><p class="test-copy">Inicie e sustente uma nota confortável, sem forçar. Conclua quando terminar.</p><button class="button primary" id="sustainButton" type="button" disabled>Iniciar sustentação <span>→</span></button></article>
+          <article class="panel advanced-card"><div class="analysis-card-head"><div><p class="section-tag">F08 · VIBRATO</p><h3>Oscilação natural</h3></div><span class="session-indicator" id="vibratoStatus">PRONTO</span></div><div class="metric-hero"><strong id="vibratoRate">— Hz</strong><span id="vibratoRegularity">Aguardando teste</span></div><div class="metric-columns"><div><span>Amplitude</span><b id="vibratoAmplitude">— cents</b></div><div><span>Amostras</span><b id="vibratoSamples">—</b></div></div><p class="test-copy">Sustente uma nota confortável por alguns segundos e deixe o vibrato acontecer naturalmente.</p><button class="button secondary" id="vibratoButton" type="button" disabled>Iniciar leitura de vibrato</button></article>
+          <article class="panel advanced-card"><div class="analysis-card-head"><div><p class="section-tag">F09 · ATAQUE VOCAL</p><h3>Entrada e estabilização</h3></div><span class="session-indicator" id="attackStatus">PRONTO</span></div><div class="metric-hero"><strong id="attackTime">— ms</strong><span id="attackStability">Aguardando teste</span></div><div class="metric-columns"><div><span>Primeiro sinal</span><b id="attackOnset">—</b></div><div><span>Dispersão inicial</span><b id="attackSpread">—</b></div></div><p class="test-copy">Inicie e cante uma nota isolada, confortável e estável. Não é um teste de potência.</p><button class="button secondary" id="attackButton" type="button" disabled>Preparar ataque</button></article>
+          <article class="panel advanced-card"><div class="analysis-card-head"><div><p class="section-tag">F10 · TRANSIÇÕES DE REGISTRO</p><h3>Observação de mudanças</h3></div><span class="session-indicator" id="transitionStatus">PRONTO</span></div><div class="transition-result"><strong id="transitionPoints">—</strong><span id="transitionDetail">Nenhuma observação ainda</span></div><p class="test-copy">Faça uma sirene lenta. O sistema aponta apenas mudanças abruptas de frequência ou intensidade que merecem observação.</p><button class="button secondary" id="transitionButton" type="button" disabled>Iniciar observação</button></article>
+        </div>
+      </section>
+      <section class="profile-section" id="perfil" aria-labelledby="profileTitle">
+        <div class="section-heading"><div><p class="section-tag">PERFIL E HISTÓRICO LOCAL</p><h2 id="profileTitle">Sua voz, suas sessões.</h2></div><p>O perfil individual e os resumos ficam neste navegador até que você opte por configurar a sincronização Firebase.</p></div>
+        <div class="profile-grid"><article class="panel profile-card"><label for="profileName">Nome do perfil</label><input id="profileName" maxlength="42" placeholder="Ex.: Jonathan" autocomplete="name" /><p id="profileId">ID local: —</p><button class="button primary" id="saveProfile" type="button">Salvar perfil</button><div class="firebase-state"><span id="firebaseDot"></span><p><b id="firebaseStatus">Firebase não configurado</b><small id="firebaseHint">Siga o tutorial FIREBASE_TUTORIAL.txt para ativar a sincronização opcional.</small></p></div></article><article class="panel session-card"><div class="analysis-card-head"><div><p class="section-tag">SESSÃO ATUAL</p><h3>Salvar resultados</h3></div><button class="button secondary" id="saveSession" type="button" disabled>Salvar sessão</button></div><p class="test-copy">Salva apenas o resumo numérico da sessão: não há gravação de áudio.</p><div class="saved-sessions" id="savedSessions"><p>Nenhuma sessão salva neste perfil.</p></div></article></div>
       </section>
       <section class="capture-section" id="captura" aria-labelledby="captureTitle">
         <div class="section-heading"><div><p class="section-tag">ESTAÇÃO DE CAPTURA</p><h2 id="captureTitle">Configure a entrada de áudio</h2></div><p>O acesso ao microfone só é solicitado quando você escolhe iniciar. O processamento ocorre somente neste dispositivo.</p></div>
@@ -57,12 +71,17 @@
         <article class="roadmap-item complete"><span class="step">02</span><div><p>CONCLUÍDA</p><h3>Captura de áudio</h3><small>Permissões, calibração e medidor.</small></div><i>✓</i></article>
         <article class="roadmap-item complete"><span class="step">03–04</span><div><p>CONCLUÍDA</p><h3>Frequência e afinação</h3><small>Pitch, nota e desvio em cents.</small></div><i>✓</i></article>
         <article class="roadmap-item complete"><span class="step">05–06</span><div><p>CONCLUÍDA</p><h3>Extensão e tessitura</h3><small>Mapas de sessão e conforto estimado.</small></div><i>✓</i></article>
+        <article class="roadmap-item complete"><span class="step">07–10</span><div><p>CONCLUÍDA</p><h3>Controle e transições</h3><small>Sustentação, vibrato, ataque e observação.</small></div><i>✓</i></article>
       </div></section>
       <footer><span>© 2026 VALE GAMES · VALE VOICE LAB</span><a href="CHANGELOG.md">Changelog</a><span>·</span><a href="docs/AUDITORIA-F06.md">Auditoria F06</a></footer>
     </main>
   </div>
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="js/storage.js"></script>
+  <script src="js/firebase-config.js"></script>
+  <script src="js/firebase-sync.js"></script>
   <script src="js/vocal-analysis.js"></script>
   <script src="js/app.js"></script>
+  <script src="js/advanced.js"></script>
 </body>
 </html>

@@ -1,5 +1,29 @@
 # Changelog — VALE VOICE LAB
 
+## VVL-1.0.0-F10 — 22/07/2026 · 12:10 BRT
+
+### Fase 07 — Sustentação e intensidade
+- Cronômetro de nota sustentada, dispersão de intensidade e indicador de estabilidade.
+
+### Fase 08 — Vibrato
+- Leitura exploratória de taxa, amplitude e regularidade durante nota sustentada.
+
+### Fase 09 — Ataque vocal
+- Medição de tempo até o primeiro sinal vocal e dispersão inicial de frequência.
+
+### Fase 10 — Observação de transições
+- Identificação de mudanças abruptas de frequência ou intensidade durante sirene lenta.
+- Comunicação explícita: não classifica registros vocais nem diagnostica a voz.
+
+### Perfil, salvamento e Firebase
+- Perfil individual e resumos de sessões em IndexedDB local.
+- Camada Firebase opcional com autenticação anônima e Firestore.
+- Identidade SVG para navegação, favicon e instalação PWA.
+- Tutorial detalhado para configuração segura do Firebase Spark.
+
+### Próxima fase
+- Análise espectral, harmônicos, brilho e energia.
+
 ## VVL-1.0.0-F06 — 22/07/2026 · 10:41 BRT
 
 ### Fase 03 — Frequência fundamental

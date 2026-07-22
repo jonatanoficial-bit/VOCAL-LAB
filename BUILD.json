@@ -1,13 +1,13 @@
 {
   "product": "VALE VOICE LAB",
-  "build": "VVL-1.0.0-F06",
-  "phase": 6,
-  "builtAt": "2026-07-22T10:41:28-03:00",
+  "build": "VVL-1.0.0-F10",
+  "phase": 10,
+  "builtAt": "2026-07-22T12:10:11-03:00",
   "timezone": "America/Sao_Paulo",
   "releaseType": "phase-delivery",
   "distribution": {
-    "localPackage": "VALE-VOICE-LAB-VVL-1.0.0-F06-2026-07-22-1041-BRT.zip",
+    "localPackage": "VALE-VOICE-LAB-VVL-1.0.0-F10-2026-07-22-1210-BRT.zip",
     "githubRepository": "Manual upload requested; no GitHub upload in this build"
   },
-  "audioPrivacy": "Local processing only; audio is not recorded, uploaded, or persisted."
+  "audioPrivacy": "Local processing only; audio is not recorded, uploaded, or persisted. Only numerical session summaries can be synchronized after optional Firebase setup."
 }
