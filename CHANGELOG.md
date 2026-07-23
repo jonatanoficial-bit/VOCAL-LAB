@@ -1,5 +1,28 @@
 # Changelog — VALE VOICE LAB
 
+## VVL-1.1.0-F18 — 23/07/2026 · 18:02 BRT
+
+### Módulo 1 — Diagnóstico vocal
+- Avaliação guiada em dez etapas com instruções, temporizadores, referências sonoras e piano animado.
+- Classificação vocal probabilística com pesos: extensão 25%, tessitura 30%, precisão 15%, conforto 10%, estabilidade 10%, sustentação 5% e registro 5%.
+- Vinte e seis perfis genéricos e detalhados entre soprano, mezzo, contralto, tenor, barítono e baixo.
+- Resultado premium com probabilidades, mapa vocal, métricas e explicação compreensível.
+
+### Módulo 2 — Professor virtual
+- Banco determinístico de 342 vocalises em 19 categorias e 18 padrões musicais.
+- Metadados completos: objetivo, dificuldade, duração, faixa, notas, tempo e sequência.
+- Gerador sonoro, teclado animado, pontuação em cents e feedback pedagógico durante o exercício.
+- Plano diário adaptado à classificação e aos indicadores mais frágeis.
+
+### Módulo 3 — Evolução profissional
+- Histórico individual com comparação visual entre sessões.
+- Relatório PDF com probabilidades, métricas, recomendações, metas e advertências.
+- Alternativa de impressão quando a biblioteca PDF online estiver indisponível.
+
+### Segurança e limites
+- Nenhum arquivo de áudio é gravado ou enviado.
+- Classificação e passaggio são hipóteses; não constituem diagnóstico ou definição fach definitiva.
+
 ## VVL-1.0.0-F10 — 22/07/2026 · 12:10 BRT
 
 ### Fase 07 — Sustentação e intensidade

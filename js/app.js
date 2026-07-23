@@ -1,6 +1,6 @@
 (() => {
   'use strict';
-  const build = { version: 'VVL-1.0.0-F10', builtAt: '2026-07-22T12:10:11-03:00' };
+  const build = { version: 'VVL-1.1.0-F18', builtAt: '2026-07-23T18:02:55-03:00' };
   const buildDate = document.querySelector('#buildDate');
   if (buildDate) buildDate.textContent = new Intl.DateTimeFormat('pt-BR', { dateStyle: 'medium', timeStyle: 'short', timeZone: 'America/Sao_Paulo' }).format(new Date(build.builtAt));
   const sidebar = document.querySelector('#sidebar');
@@ -36,6 +36,7 @@
   const analyseLevel = () => {
     if (!capture.analyser) return; const data = new Float32Array(capture.analyser.fftSize); capture.analyser.getFloatTimeDomainData(data); let sum = 0; for (const value of data) sum += value * value; const db = Math.max(-60, 20 * Math.log10(Math.sqrt(sum / data.length) || .000001)); capture.currentDb = db; capture.nodes.meter.style.width = `${dbToWidth(db)}%`; capture.nodes.db.textContent = `${db.toFixed(1)} dBFS`;
     if (capture.noiseFloor !== null) { capture.nodes.marker.style.left = `${dbToWidth(capture.noiseFloor)}%`; capture.nodes.marker.style.opacity = '1'; const delta = db - capture.noiseFloor; const quality = delta >= 18 ? ['Excelente', 'good'] : delta >= 10 ? ['Boa', 'good'] : delta >= 5 ? ['Baixa — aproxime-se do microfone', 'warn'] : ['Sinal muito próximo ao ruído', 'error']; setText(capture.nodes.quality, quality[0], quality[1]); capture.nodes.hint.textContent = delta >= 10 ? 'Sinal suficiente para a análise vocal.' : 'Cante ou fale naturalmente para testar o sinal.'; } else capture.nodes.hint.textContent = db < -45 ? 'Sinal baixo — fale perto do microfone.' : 'Calibre o ambiente antes de iniciar uma avaliação.';
+    window.dispatchEvent(new CustomEvent('vvl:level', { detail: { db, time: performance.now() } }));
     if (performance.now() - capture.lastPitchAt > 45) { capture.lastPitchAt = performance.now(); renderPitch(VocalAnalysis.detectFrequency(data, capture.context.sampleRate)); }
     capture.frame = requestAnimationFrame(analyseLevel);
   };
